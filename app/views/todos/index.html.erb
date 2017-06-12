@@ -1,0 +1,24 @@
+<h1>Projects</h1>
+<ul>
+<!--
+    <%# @todos.each do |todo| %>
+    <li><%#= todo.task %></li>
+    <%# end %>-->
+
+ 
+    <% if @todos.count > 0 %>
+    <p><%= @todos.first.task %></p>
+    <p><%= @todos.count %>
+    <% end %>
+
+    <%= form_for @todo do |f| %>
+      <%= f.text_field :task %>
+      <%= f.submit %>
+    <% end %>
+
+    <%= link_to "[delete]", todo_path(@todos), method: :delete, data: { confirm: "are you sure?" } %>
+
+    <%= form_for @todo do |f| %>
+    
+    <% end%>
+</ul>
