@@ -7,12 +7,13 @@
 
  
     <% if @todos.count > 0 %>
-    <p><%= @todos.first.task %></p>
-    <p><%= @todos.count %>
+    <p class="first-task"><%= @todos.first.task %></p>
+    <p>Todo : <%= @todos.count %></p>
     <% end %>
 
     <%= form_for @todo do |f| %>
       <%= f.text_field :task %>
+      <br>
       <%= f.submit %>
     <% end %>
 
