@@ -1,13 +1,12 @@
 class TodosController < ApplicationController
 
   def index
-    @todos = Todo.all
     @todo = Todo.new
+    @todos = Todo.all
   end
 
   def new
     @todo = Todo.new
-
   end
 
   def create
@@ -16,6 +15,13 @@ class TodosController < ApplicationController
     redirect_to root_path
   end
 
+  def stack
+    @todo = Todo.new(:task => Todo.first.task)
+    @todo.save
+    @todo = Todo.first
+    @todo.destroy
+    redirect_to root_path
+  end
 
   def destroy
     @todos = Todo.first

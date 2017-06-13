@@ -1,6 +1,7 @@
 <h1>PAKUPAKU TODO</h1>
 <ul>
 <!--
+
     <%# @todos.each do |todo| %>
     <li><%#= todo.task %></li>
     <%# end %>-->
@@ -18,8 +19,8 @@
     <% end %>
 
     <%= link_to "[delete]", todo_path(@todos), method: :delete, data: { confirm: "are you sure?" } %>
+    <%#= link_to "新規作成", :controller => "pages", :action => "new" %>
+    <%= link_to "[stack]", stack_path,  data: { confirm: "stack?" } %>
 
-    <%= form_for @todo do |f| %>
     
-    <% end%>
 </ul>
