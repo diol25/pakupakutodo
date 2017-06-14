@@ -79,9 +79,11 @@ a {
     border: none;
     color: white;
     padding: 10px 30px 10px 30px;
-    border-radius: 8px;
+    border-radius: 3px;
     background-color: #009F79;
     background-image:none;
+    -webkit-appearance: none;
+
   }
   .delete{
     margin: auto;
