@@ -68,9 +68,40 @@ a {
 
 @media screen and ( max-width:479px )
 {
-  p
-  {
-    color: #f00 ; /* 赤色 */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '游ゴシック  Medium', meiryo, sans-serif;
+  }
+  .form-submit {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    color: white;
+    padding: 10px 30px 10px 30px;
+    border-radius: 8px;
+    background-color: #00A0A0;
+  }
+  .delete{
+    margin: auto;
+    margin-top: 10px;
+    border: none;
+    color: white;
+    padding: 5px 0px 5px 0px;
+    border-radius: 8px;
+    background-color: #b40c58;
+  }
+  .delete-a{
+    margin-top:  10px;
+  }
+  .stack{
+    
+    margin: auto;
+    margin-top: 15px;
+    border: none;
+    color: white;
+    padding: 5px 0px 5px 0px;
+    border-radius: 8px;
+    background-color: #b40c58;
   }
 }
 
