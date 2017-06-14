@@ -16,7 +16,7 @@ class TodosController < ApplicationController
   end
 
   def stack
-    if Todo.count > 1
+    if Todo.count > 0
       @todo = Todo.new(:task => Todo.first.task,:count => Todo.first.count)
       @todo.add_count
       if @todo.count >= 3
