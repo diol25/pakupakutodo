@@ -16,9 +16,7 @@ class TodosController < ApplicationController
   end
 
   def stack
-    if Todo.exists? == false
-      redirect_to root_path
-    else
+    if Todo.count > 1
       @todo = Todo.new(:task => Todo.first.task,:count => Todo.first.count)
       @todo.add_count
       if @todo.count >= 3
@@ -35,6 +33,8 @@ class TodosController < ApplicationController
           redirect_to root_path
         end
       end
+    else
+      redirect_to root_path
     end
   end
 
