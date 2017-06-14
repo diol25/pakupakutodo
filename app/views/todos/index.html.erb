@@ -18,10 +18,12 @@
         <% end %>
 
         <div class="delete">
-            <%= link_to "delete", todo_path(@todos), method: :delete, data: { confirm: "are you sure?"} %>
+            <%= link_to "delete", todo_path(@todos), method: :delete, data: { confirm: "are you sure?"},:class => 'delete-az' %>
         </div>
         <div class="stack">
             <%= link_to "stack", stack_path,  data: { confirm: "stack?" }%>
         </div>
     </div> 
 </div>
+
+<span class="copy-right">© 2017 Kota Sakurai</span>
