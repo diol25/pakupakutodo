@@ -1,26 +1,27 @@
-<h1>PAKUPAKU TODO</h1>
-<ul>
-<!--
+<%= image_tag "title.png"%>
 
-    <%# @todos.each do |todo| %>
-    <li><%#= todo.task %></li>
-    <%# end %>-->
+<div>
 
- 
+    <%= image_tag("stst.png", :size => "100x100") %>
+    <!-- <img src="./public/assets/images/stst.png"> -->
     <% if @todos.count > 0 %>
     <p class="first-task"><%= @todos.first.task %></p>
+
     <p>Todo : <%= @todos.count %></p>
     <% end %>
 
-    <%= form_for @todo do |f| %>
-      <%= f.text_field :task %>
-      <br>
-      <%= f.submit %>
-    <% end %>
+    <div class="contents">
+        <%= form_for @todo do |f| %>
+          <%= f.text_field :task , :class => 'form-text'%>
+          <br>
+          <%= f.submit :class => 'form-submit' %>
+        <% end %>
 
-    <%= link_to "[delete]", todo_path(@todos), method: :delete, data: { confirm: "are you sure?" } %>
-    <%#= link_to "新規作成", :controller => "pages", :action => "new" %>
-    <%= link_to "[stack]", stack_path,  data: { confirm: "stack?" } %>
-
-    
-</ul>
+        <div class="delete">
+            <%= link_to "delete", todo_path(@todos), method: :delete, data: { confirm: "are you sure?"} %>
+        </div>
+        <div class="stack">
+            <%= link_to "stack", stack_path,  data: { confirm: "stack?" }%>
+        </div>
+    </div> 
+</div>
