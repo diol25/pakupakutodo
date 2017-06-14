@@ -7,8 +7,6 @@
     <!-- <img src="./public/assets/images/stst.png"> -->
     <% if @todos.count > 0 %>
     <p class="first-task"><%= @todos.first.task %></p>
-
-
     <% end %>
 
     <div class="contents">
@@ -24,6 +22,12 @@
             <%#= link_to "delete", todo_path(@todos), method: :delete, data: { confirm: "are you sure?"},:class => 'delete-az' %>
         <a href="/stack" ><div class="stack">Stack</div></a>
     </div> 
+    <div class="description">
+        <p>PakuPakuTodoはあなたのタスクを食べちゃいます。</p>
+        <p>たいせつなあなたのやるべきことをいれましょう。</p>
+        <p>３回だけ、後回しできます。３回後回しすると、すたっくんが食べてしまいます。</p>
+    </div>
 </div>
+
 
 <span class="copy-right">© 2017 Kota Sakurai</span>
