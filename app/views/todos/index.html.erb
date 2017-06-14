@@ -3,26 +3,26 @@
 <div>
 
     <%= image_tag("stst.png", :size => "100x100") %>
+    <span> < <%= @todos.count %></span>
     <!-- <img src="./public/assets/images/stst.png"> -->
     <% if @todos.count > 0 %>
     <p class="first-task"><%= @todos.first.task %></p>
 
-    <p>Todo : <%= @todos.count %></p>
+
     <% end %>
 
     <div class="contents">
         <%= form_for @todo do |f| %>
           <%= f.text_field :task , :class => 'form-text'%>
           <br>
+
           <%= f.submit :class => 'form-submit' %>
         <% end %>
 
-        <div class="delete">
-            <%= link_to "delete", todo_path(@todos), method: :delete, data: { confirm: "are you sure?"},:class => 'delete-az' %>
-        </div>
-        <div class="stack">
-            <%= link_to "stack", stack_path,  data: { confirm: "stack?" }%>
-        </div>
+        
+        <a href="/stack_kill" ><div class="delete">Delete</div></a>
+            <%#= link_to "delete", todo_path(@todos), method: :delete, data: { confirm: "are you sure?"},:class => 'delete-az' %>
+        <a href="/stack" ><div class="stack">Stack</div></a>
     </div> 
 </div>
 

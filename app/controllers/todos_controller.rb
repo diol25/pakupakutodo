@@ -39,9 +39,13 @@ class TodosController < ApplicationController
   end
 
   def destroy
-    @todos = Todo.first
-    @todos.destroy
-    redirect_to root_path
+    if Todo.exists? == false
+      redirect_to root_path
+    else
+      @todos = Todo.first
+      @todos.destroy
+      redirect_to root_path
+    end
   end
 
   private
