@@ -3,6 +3,7 @@ class TodosController < ApplicationController
   def index
     @todo = Todo.new
     @todos = Todo.all
+    @date = Todo.first
   end
 
   def new
