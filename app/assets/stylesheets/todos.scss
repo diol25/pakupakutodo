@@ -65,6 +65,9 @@ a {
   margin-top: 20px;
   font-size: 5px;
 }
+.date {
+    font-size:10px;
+  }
 
 @media screen and ( max-width:479px )
 {
@@ -115,6 +118,9 @@ a {
   .description{
     margin-top: 20px;
     font-size: 11px;
+  }
+  .date {
+    font-size:10px;
   }
 
 }
