@@ -14,6 +14,7 @@ class TodosController < ApplicationController
     @todo = Todo.new(todo_params)
     @todo.save
     redirect_to root_path
+    
   end
 
   def stack
