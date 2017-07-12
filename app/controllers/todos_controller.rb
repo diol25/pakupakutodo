@@ -3,6 +3,7 @@ class TodosController < ApplicationController
   def index
     @todo = Todo.new
     @todos = Todo.all
+    @date = Todo.first
   end
 
   def new
@@ -13,6 +14,7 @@ class TodosController < ApplicationController
     @todo = Todo.new(todo_params)
     @todo.save
     redirect_to root_path
+    
   end
 
   def stack

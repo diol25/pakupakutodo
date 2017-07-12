@@ -7,7 +7,9 @@
     <!-- <img src="./public/assets/images/stst.png"> -->
     <% if @todos.count > 0 %>
     <p class="first-task"><%= @todos.first.task %></p>
+    <p class=" date"><%= @date.updated_at.in_time_zone('Tokyo').strftime("%Y-%m-%d %H:%M:%S") %></p>
     <% end %>
+
 
     <div class="contents">
         <%= form_for @todo do |f| %>
