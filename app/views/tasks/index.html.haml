@@ -1,0 +1,11 @@
+%h1 Tasks#index
+
+= form_with model: @task, url: tasks_path, local: false do |form|
+  = form.text_field :title
+
+  = form.submit "タスク追加"
+
+.todos
+  - @tasks.each do |task|
+    %p= task.title
+    = link_to "消すぞ", task_path(task.id), method: :delete, remote: true
