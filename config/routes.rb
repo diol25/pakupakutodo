@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :todos
-  get '/stack' => 'todos#stack'
-  get '/stack_kill' => 'todos#destroy'
-
-  root 'todos#index'
-
-
+  root 'top#index'
+  resources :tasks, only: %i(index create destroy)
 end
