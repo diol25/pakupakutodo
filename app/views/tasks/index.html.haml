@@ -1,2 +1,10 @@
 %h1 Tasks#index
-%p Find me in app/views/tasks/index.html.haml
+
+= form_with model: @task, url: tasks_path, local: false do |form|
+  = form.text_field :title
+
+  = form.submit "タスク追加"
+
+.todos
+  - @tasks.each do |task|
+    %p= task.title
