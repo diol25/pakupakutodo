@@ -19,8 +19,11 @@ class TasksController < ApplicationController
 
   def destroy
     @task= Task.find params[:id]
-    if @task.destroy
-      redirect_to tasks_path
+    respond_to do |format|
+      if @task.destroy
+        format.js
+        format.html { redirect_to tasks_path }
+      end
     end
   end
 
