@@ -1,0 +1,3 @@
+.div{ id: task.id}
+  %p= task.title
+  = link_to "消すぞ", task_path(task.id), method: :delete

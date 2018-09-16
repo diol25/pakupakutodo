@@ -6,7 +6,4 @@
   = form.submit "タスク追加"
 
 .todos
-  - @tasks.each do |task|
-    .div{ id: task.id}
-      %p= task.title
-      = link_to "消すぞ", task_path(task.id), method: :delete
+  = render @tasks
