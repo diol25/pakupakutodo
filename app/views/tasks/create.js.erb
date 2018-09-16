@@ -1,1 +1,10 @@
-$('.todos').append("<%= escape_javascript(render @task) %>");
+$('#flash').show();
+$('#flash').html("<p>Add</p>");
+setTimeout(function(){
+  $('#flash').fadeOut();
+  $('#flash').empty();
+},1000);
+
+if (<%= @list.tasks.count%> == 1) {
+  $('.todos').html("<%= escape_javascript(render @task) %>");
+}

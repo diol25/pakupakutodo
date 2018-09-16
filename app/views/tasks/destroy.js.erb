@@ -1,1 +1,7 @@
-$("#" + `<%= @task.id%>`).remove();
+$('#flash').show();
+$('#flash').html("<p>delete</p>");
+if (<%= @list.tasks.count %> == 0) {
+  $('.todos').html("<p>Want PakuPaku</p>");
+} else {
+  $('.todos').html("<%= escape_javascript(render @first_task) %>");
+}
