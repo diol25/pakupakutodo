@@ -14,9 +14,10 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-gem 'bootstrap'
+gem "bootstrap", "~> 4.1.1"
 gem 'haml-rails'
 gem 'rails-ujs'
+gem "sass-rails", "~> 5.0"
 
 group :production do
   gem 'pg'

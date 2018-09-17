@@ -202,7 +202,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap
+  bootstrap (~> 4.1.1)
   byebug
   coffee-rails (~> 4.2)
   haml-rails
