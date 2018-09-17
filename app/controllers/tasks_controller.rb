@@ -13,12 +13,14 @@ class TasksController < ApplicationController
       if @task.save
         format.html { redirect_to tasks_path } if @list.tasks.count == 1
         format.js
+      else
+        format.html { render :index }
       end
     end
   end
 
   def destroy
-    @task= Task.find params[:id]
+    @task = Task.find params[:id]
     respond_to do |format|
       if @task.destroy
         if @list.tasks.blank?

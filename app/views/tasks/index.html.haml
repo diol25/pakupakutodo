@@ -16,6 +16,10 @@
     #flash
 
   = form_with model: @task, url: tasks_path, local: false do |form|
+    - if @task.errors.any?
+      - @task.errors.full_messages.each do |msg|
+        %p= msg
+
     .form-group
       = form.text_field :title, class: "form-control"
 

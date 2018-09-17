@@ -16,20 +16,14 @@
   border: solid 1px #444;
   margin: 20px auto;
   padding: 5px 0px;
-  height: 120px;
-  position: relative;
+  // height: 120px;
 }
 
 .task {
   width: 100%;
   display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  -webkit-transform: translateY(-50%) translateX(-50%);
   text-align: left;
-  margin-left: 20px;
+  padding: 20px;
 }
 
 .task-title {
@@ -94,5 +88,5 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: image-url("top-text.png");
-  margin-top: 35px;
+  margin-top: 10px;
 }
