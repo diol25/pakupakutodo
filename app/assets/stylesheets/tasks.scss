@@ -1,3 +1,53 @@
-// Place all the styles related to the Tasks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.top-head {
+  text-align: center;
+
+  img {
+    width: 100%;
+  }
+}
+
+.contents {
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.task {
+  margin: 20px auto;
+  padding: 5px 0px;
+  width: 100%;
+  border: solid 1px #444;
+}
+
+.task-lines {
+  margin: 40px 0;
+}
+
+.task-line {
+  width: 100%;
+  padding: 15px 0;
+  background: #444;
+  margin-bottom: 5px;
+
+  &.gray-S {
+    background: #555;
+  }
+  &.gray-M {
+    background: #999;
+  }
+  &.gray-L {
+    background: #bbb;
+  }
+  &.gray-LL {
+    background: #eee;
+  }
+}
+
+.button {
+  padding: 10px 40px;
+  background: #498DEA;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: 100;
+}

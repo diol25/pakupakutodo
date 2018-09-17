@@ -6,5 +6,5 @@ setTimeout(function(){
 },1000);
 
 if (<%= @list.tasks.count%> == 1) {
-  $('.todos').html("<%= escape_javascript(render @task) %>");
+  $('.pakupaku-tasks').html("<%= escape_javascript(render @task) %>");
 }

@@ -1,7 +1,7 @@
 $('#flash').show();
 $('#flash').html("<p>delete</p>");
 if (<%= @list.tasks.count %> == 0) {
-  $('.todos').html("<p>Want PakuPaku</p>");
+  $('.pakupaku-tasks').html("<p>Want PakuPaku</p>");
 } else {
-  $('.todos').html("<%= escape_javascript(render @first_task) %>");
+  $('.pakupaku-tasks').html("<%= escape_javascript(render @first_task) %>");
 }

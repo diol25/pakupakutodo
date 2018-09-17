@@ -1,10 +1,19 @@
-= image_tag "title.png"
-#flash
+.contents
+  .top-head
+    = image_tag "pakupakutodo.png", width: "600px"
 
-= form_with model: @task, url: tasks_path, local: false do |form|
-  = form.text_field :title
+  .pakupaku-tasks
+    - unless @first_task.nil?
+      = render "task", task: @first_task
+  .task-lines
+    .task-line
+    .task-line.gray-S
+    .task-line.gray-M
+    .task-line.gray-L
+  #flash
 
-  = form.submit "タスク追加"
+  = form_with model: @task, url: tasks_path, local: false do |form|
+    .form-group
+      = form.text_field :title, class: "form-control"
 
-.todos
-  = render @tasks
+    = form.submit "タスクを追加する", class: "button"

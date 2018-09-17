@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_action :verify_list
 
   def index
-    @tasks = @list.tasks
+    @first_task = @list.tasks.first
     @task = Task.new
   end
 
