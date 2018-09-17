@@ -2,11 +2,14 @@
   .top-head
     = image_tag "pakupakutodo.png", width: "600px"
 
-  .pakupaku-tasks
-    - unless @first_task.nil?
-      = render "task", task: @first_task
-    - else
-      %h3.done All task is done !!
+  .task-content
+    .tasks
+      - unless @first_task.nil?
+        = render "task", task: @first_task
+      - else
+        %h3.done All task is done !!
+    .tasks-count= @list.count
+
   .task-lines
     .task-line
     .task-line.gray-S
