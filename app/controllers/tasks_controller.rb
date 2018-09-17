@@ -23,25 +23,22 @@ class TasksController < ApplicationController
     @task = Task.find params[:id]
     respond_to do |format|
       if @task.destroy
-        if @list.tasks.blank?
-          @first_task = []
-        else
-          @first_task = @list.tasks.first
-        end
-
         format.js
         format.html { redirect_to tasks_path }
       end
+    end
+
+    if @list.tasks.blank?
+      @first_task = []
+    else
+      @first_task = @list.tasks.first
     end
   end
 
   private
 
     def verify_cookie
-      if cookies[:todo_list].nil?
-
-        cookies[:todo_list] = SecureRandom.urlsafe_base64
-      end
+      cookies[:todo_list] = SecureRandom.urlsafe_base64 if cookies[:todo_list].nil?
     end
 
     def verify_list
