@@ -1,0 +1,26 @@
+.contents
+  .top-head
+    = image_tag "pakupakutodo.png", width: "600px"
+
+  .pakupaku-tasks
+    - unless @first_task.nil?
+      = render "task", task: @first_task
+    - else
+      %h3.done All task is done !!
+  .task-lines
+    .task-line
+    .task-line.gray-S
+    .task-line.gray-M
+    .task-line.gray-L
+  .notify-box
+    #flash
+
+  = form_with model: @task, url: tasks_path, local: false do |form|
+    - if @task.errors.any?
+      - @task.errors.full_messages.each do |msg|
+        %p= msg
+
+    .form-group
+      = form.text_field :title, class: "form-control"
+
+    = form.submit "タスクを追加する", class: "button"
