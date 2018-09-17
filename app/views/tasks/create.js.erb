@@ -3,7 +3,7 @@ $('#flash').html('<h1 class="add animated fadeInUp fast">Add !!</h1>');
 setTimeout(function(){
   $('#flash').fadeOut();
 },1500);
-
+$('.tasks-count').html("<%= @list.count %>");
 if (<%= @list.tasks.count%> == 1) {
-  $('.pakupaku-tasks').html("<%= escape_javascript(render @task) %>");
+  $('.tasks').html("<%= escape_javascript(render @task) %>");
 }

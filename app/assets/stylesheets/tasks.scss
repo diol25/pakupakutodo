@@ -12,11 +12,24 @@
   margin: 0 auto;
 }
 
-.pakupaku-tasks {
+.task-content {
+  position: relative;
+
+}
+
+.tasks {
   border: solid 1px #444;
-  margin: 20px auto;
-  padding: 5px 0px;
-  // height: 120px;
+  margin: 20px auto 0px;
+}
+
+.tasks-count {
+  position: absolute;
+  right:0;
+  height: 20px;
+  width: 20px;
+  background: #555;
+  color: white;
+  font-size: 12px;
 }
 
 .task {
