@@ -1,9 +1,8 @@
 $('#flash').show();
-$('#flash').html('<p class="fadeInDown">Add</p>');
+$('#flash').html('<h1 class="add animated fadeInUp fast">Add !!</h1>');
 setTimeout(function(){
   $('#flash').fadeOut();
-  $('#flash').empty();
-},1000);
+},1500);
 
 if (<%= @list.tasks.count%> == 1) {
   $('.pakupaku-tasks').html("<%= escape_javascript(render @task) %>");

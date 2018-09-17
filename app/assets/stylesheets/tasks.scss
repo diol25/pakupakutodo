@@ -12,15 +12,34 @@
   margin: 0 auto;
 }
 
-.task {
+.pakupaku-tasks {
+  border: solid 1px #444;
   margin: 20px auto;
   padding: 5px 0px;
+  height: 120px;
+  position: relative;
+}
+
+.task {
   width: 100%;
-  border: solid 1px #444;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  text-align: left;
+  margin-left: 20px;
+}
+
+.task-title {
+  font-family: "Hiragino Sans","ヒラギノ角ゴシック";
+  font-weight: 800;
+  font-size: 40px;
 }
 
 .task-lines {
-  margin: 40px 0;
+  margin: 40px 0 10px;
 }
 
 .task-line {
@@ -52,6 +71,28 @@
   font-weight: 100;
 }
 
-#flash {
-  height: 50px;
+.notify-box {
+  height: 70px;
+}
+
+.animated {
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.add {
+  font-family: 'arial black';
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: image-url("grad-add.png");
+}
+
+.done {
+  font-family: 'arial black';
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: image-url("top-text.png");
+  margin-top: 35px;
 }

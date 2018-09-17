@@ -5,12 +5,15 @@
   .pakupaku-tasks
     - unless @first_task.nil?
       = render "task", task: @first_task
+    - else
+      %h3.done All task is done !!
   .task-lines
     .task-line
     .task-line.gray-S
     .task-line.gray-M
     .task-line.gray-L
-  #flash
+  .notify-box
+    #flash
 
   = form_with model: @task, url: tasks_path, local: false do |form|
     .form-group

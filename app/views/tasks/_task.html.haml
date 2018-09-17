@@ -1,4 +1,5 @@
 .task
   .div{ id: task.id}
-    = task.title
-    = link_to "消すぞ", task_path(task.id), method: :delete, remote: true
+    .task-title= task.title
+    %br
+    = link_to "Done?", task_path(task.id), method: :delete, remote: true
