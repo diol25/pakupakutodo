@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_action :verify_list
 
   def index
-    @first_task = @list.tasks.first
+    @first_task = @list.todos.first
     @task = Task.new
   end
 
@@ -22,16 +22,16 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find params[:id]
     respond_to do |format|
-      if @task.destroy
+      if @task.update(status: 1)
         format.js
         format.html { redirect_to tasks_path }
       end
     end
 
-    if @list.tasks.blank?
+    if @list.todos.blank?
       @first_task = []
     else
-      @first_task = @list.tasks.first
+      @first_task = @list.todos.first
     end
   end
 

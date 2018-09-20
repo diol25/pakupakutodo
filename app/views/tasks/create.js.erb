@@ -4,6 +4,6 @@ setTimeout(function(){
   $('#flash').fadeOut();
 },1500);
 $('.tasks-count').html("<%= @list.count %>");
-if (<%= @list.tasks.count%> == 1) {
+if (<%= @list.todos.count %> == 1) {
   $('.tasks').html("<%= escape_javascript(render @task) %>");
 }
