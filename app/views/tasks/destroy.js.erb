@@ -5,7 +5,7 @@ setTimeout(function(){
 },1500);
 $('.tasks-count').html("<%= @list.count %>");
 
-if (<%= @list.tasks.count %> == 0) {
+if (<%= @list.todos.count  %> == 0) {
   $('.tasks').html('<h3 class="done">All task is done !!</h3>');
 } else {
   $('.tasks').html("<%= escape_javascript(render @first_task) %>");

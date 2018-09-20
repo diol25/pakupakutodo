@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_action :verify_list
 
   def index
-    @first_task = @list.tasks.first
+    @first_task = @list.todos.first
     @task = Task.new
   end
 
@@ -28,10 +28,10 @@ class TasksController < ApplicationController
       end
     end
 
-    if @list.tasks.blank?
+    if @list.todos.blank?
       @first_task = []
     else
-      @first_task = @list.tasks.first
+      @first_task = @list.todos.first
     end
   end
 
