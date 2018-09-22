@@ -3,9 +3,9 @@ $('#flash').html('<h1 class="add animated rollOut fast">Done !!</h1>');
 setTimeout(function(){
   $('#flash').fadeOut();
 },1500);
-$('.tasks-count').html("<%= @list.count %>");
+$('.tasks-count').html("<%= @list.tasks.todo.count %>");
 
-if (<%= @list.todos.count  %> == 0) {
+if (<%= @list.tasks.todo.count %> == 0) {
   $('.tasks').html('<h3 class="done">All task is done !!</h3>');
 } else {
   $('.tasks').html("<%= escape_javascript(render @first_task) %>");
