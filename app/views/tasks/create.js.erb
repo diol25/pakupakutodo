@@ -3,7 +3,7 @@ $('#flash').html('<h1 class="add animated bounceOutUp fast">Add !!</h1>');
 setTimeout(function(){
   $('#flash').fadeOut();
 },1500);
-$('.tasks-count').html("<%= @list.count %>");
-if (<%= @list.todos.count %> == 1) {
+$('.tasks-count').html("<%= @list.tasks.todo.count %>");
+if (<%= @list.tasks.todo.count %> == 1) {
   $('.tasks').html("<%= escape_javascript(render @task) %>");
 }
