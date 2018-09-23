@@ -31,7 +31,7 @@
 
   = form_with model: @list_mail_form, url: list_mails_path, local: false do |form|
     .form-group
-      = form.text_field :email, class: "form-control"
+      = form.email_field :email, class: "form-control"
 
     = form.submit "メールを送信する", class: "button"
 
