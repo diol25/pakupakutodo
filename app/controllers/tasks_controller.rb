@@ -42,6 +42,7 @@ class TasksController < ApplicationController
     end
 
     def verify_list
+      cookies[:todo_list] = params[:todo_list] if params[:todo_list]
       @list ||= List.find_or_create_by(cookie_id: cookies[:todo_list])
     end
 
