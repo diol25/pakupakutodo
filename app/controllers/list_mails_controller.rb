@@ -1,8 +1,11 @@
 class ListMailsController < ApplicationController
   def create
     @list_mail_form = ListMailForm.new(email_params)
-    TodoMailer.todo_mail(cookies[:todo_list], @list_mail_form.email).deliver_now
-    flash[:email] = "Send your PakuPakuTodo!"
+    if @list_mail_form.post
+      flash[:email] = "Send your PakuPakuTodo!"
+    else
+      flash[:error] = @list_mail_form.errors.any? ? "Form error" : "Fail to send"
+    end
     redirect_to root_path
   end
 
