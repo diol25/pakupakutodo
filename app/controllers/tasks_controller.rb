@@ -5,6 +5,7 @@ class TasksController < ApplicationController
   def index
     @first_task = @list.tasks.todo.first
     @task = Task.new
+    @list_mail_form = ListMailForm.new
   end
 
   def create
@@ -42,6 +43,7 @@ class TasksController < ApplicationController
     end
 
     def verify_list
+      cookies[:todo_list] = params[:todo_list] if params[:todo_list]
       @list ||= List.find_or_create_by(cookie_id: cookies[:todo_list])
     end
 

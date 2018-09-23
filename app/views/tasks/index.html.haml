@@ -8,7 +8,7 @@
         = render "task", task: @first_task
       - else
         %h3.done All task is done !!
-    .tasks-count= @list.count
+    .tasks-count= @list.tasks.todo.count
 
   .task-lines
     .task-line
@@ -18,12 +18,26 @@
   .notify-box
     #flash
 
-  = form_with model: @task, url: tasks_path, local: false do |form|
-    - if @task.errors.any?
-      - @task.errors.full_messages.each do |msg|
+  .mb-5
+    = form_with model: @task, url: tasks_path, local: false do |form|
+      - if @task.errors.any?
+        - @task.errors.full_messages.each do |msg|
+          %p= msg
+
+      .form-group
+        = form.text_field :title, class: "form-control"
+
+      = form.submit "タスクを追加する", class: "button"
+
+  = form_with model: @list_mail_form, url: list_mails_path, local: true do |form|
+    - if @list_mail_form.errors.any?
+      - @list_mail_form.errors.full_messages.each do |msg|
         %p= msg
 
     .form-group
-      = form.text_field :title, class: "form-control"
+      = form.email_field :email, class: "form-control"
 
-    = form.submit "タスクを追加する", class: "button"
+    = form.submit "メールを送信する", class: "button"
+
+  - flash.each do |key, value|
+    .m-3.alert.alert-info= flash[:"#{key}"]
