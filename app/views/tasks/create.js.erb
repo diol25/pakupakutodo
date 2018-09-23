@@ -1,4 +1,6 @@
+<% if @task.persisted? %>
 $('#flash').show();
+$('#input-form-title').val('');
 $('#flash').html('<h1 class="add animated bounceOutUp fast">Add !!</h1>');
 setTimeout(function(){
   $('#flash').fadeOut();
@@ -7,3 +9,4 @@ $('.tasks-count').html("<%= @list.tasks.todo.count %>");
 if (<%= @list.tasks.todo.count %> == 1) {
   $('.tasks').html("<%= escape_javascript(render @task) %>");
 }
+<% end %>
