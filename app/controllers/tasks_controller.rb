@@ -5,6 +5,7 @@ class TasksController < ApplicationController
   def index
     @first_task = @list.tasks.todo.first
     @task = Task.new
+    @list_mail_form = ListMailForm.new
   end
 
   def create
