@@ -1,6 +1,6 @@
 class ListMailsController < ApplicationController
   def create
-    @list_mail_form = ListMailForm.new(email_params)
+    @list_mail_form = ListMailForm.new(email_params.merge(list_cookie_id: cookies[:todo_list]))
     if @list_mail_form.post
       flash[:email] = "Send your PakuPakuTodo!"
     else
