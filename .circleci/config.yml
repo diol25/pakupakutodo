@@ -9,6 +9,7 @@ jobs:
     # working_directory: ~/workspace
     steps:
       - checkout
+      - run: apt-get update -qq && apt-get install -y build-essential nodejs
       - run: bundle install --path vendor/bundle
       - run: bundle exec rails db:create
       - run: bundle exec rails db:schema:load
