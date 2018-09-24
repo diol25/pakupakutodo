@@ -1,0 +1,15 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: ruby:2.4.4
+        environment:
+          RAILS_ENV: test
+      - image: postgres
+    # working_directory: ~/workspace
+    steps:
+      - checkout
+      - run: bundle install --path vendor/bundle
+      - run: bundle exec rails db:create
+      - run: bundle exec rails db:schema:load
+      - run: bundle exec rspec spec/
