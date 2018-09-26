@@ -18,6 +18,7 @@ gem "bootstrap", "~> 4.1.1"
 gem 'haml-rails'
 gem 'rails-ujs'
 gem "sass-rails", "~> 5.0"
+gem 'google-analytics-rails'
 
 group :production do
   gem 'pg'
