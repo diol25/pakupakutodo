@@ -12,6 +12,7 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
   config.log_formatter = ::Logger::Formatter.new
 
+
   #メール送信
   config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method = :smtp
@@ -25,6 +26,9 @@ Rails.application.configure do
   :authentication => :plain,
   :enable_starttls_auto => true
   }
+
+  # ga
+  GA.tracker = ENV['PakuPakuGA']
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
