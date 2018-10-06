@@ -28,6 +28,9 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'sqlite3'
   gem "pry-rails"
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do
