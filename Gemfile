@@ -14,7 +14,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-gem "bootstrap", "~> 4.1.1"
+gem "bootstrap", "~> 4.3.1"
 gem 'haml-rails'
 gem 'rails-ujs'
 gem "sass-rails", "~> 5.0"
